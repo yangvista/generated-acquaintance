@@ -1,0 +1,155 @@
+/* The paintings supply the colour as well as the grain. No site-wide colour wash. */
+.longform-body{isolation:isolate;background:#45647e url('painted-city-horizon.webp') center/cover fixed}
+.paper-atmosphere{position:fixed;inset:0;z-index:-1;pointer-events:none;overflow:hidden;isolation:isolate}
+.paper-layer{position:absolute;inset:0;background-position:center;background-size:cover;background-repeat:no-repeat;will-change:opacity,mask-image}
+.paper-layer[data-paint="opening"]{background-image:url('opening-handdrawn-reference.webp');background-position:58% center}
+.paper-layer[data-paint="city"]{background-image:url('painted-city-night.webp');background-position:52% center}
+.paper-layer[data-paint="horizon"]{background-image:url('painted-city-horizon.webp')}
+.paper-layer[data-paint="clouds"]{background-image:url('painted-clouds.webp');background-position:72% center}
+.paper-layer[data-paint="thread"]{background-image:url('painted-gold-thread.webp')}
+.paper-layer.is-arriving{
+  mask-image:radial-gradient(ellipse var(--brush-x,170%) var(--brush-y,140%) at 13% 73%,#000 20%,#000e 40%,#0008 62%,transparent 84%),radial-gradient(ellipse var(--brush-y,140%) var(--brush-x,170%) at 87% 26%,#000 15%,#000a 38%,transparent 72%);
+  mask-composite:add;
+}
+.longform-body>.chapter-shell,.longform-body>#mechanism,.longform-body>#pressure,.longform-body>#defenses,.longform-body>#ending{background:transparent}
+.longform-body .reading-chapter{background:none;color:#fff6e6}
+.longform-body .reading-chapter::before,.longform-body .reading-chapter::after{display:none}
+.reading-chapter .chapter-lead p,.reading-chapter .mechanism-step-body,.reading-chapter .defenses-action-copy{color:#fff6e6}
+.reading-chapter :is(.chapter-lead,.opening-head,.story-moment-copy,.voices-lead,.voices-statistic,.mechanism-panel,.defenses-panel){text-shadow:0 1px 3px #16324866}
+.reading-chapter .page-chapter-title{color:#f1d29c}
+.preview-bar{background:#284660b8;backdrop-filter:blur(9px);border-color:#d6e0d32e}
+.reading-menu nav{background:#23405b url('painted-city-night.webp') left center/auto 680px}
+#top .cover-page::before,#top .cover-page::after{mask-image:linear-gradient(180deg,#000 64%,#000e 77%,transparent 100%)}
+#top .cover-meta{text-shadow:0 1px 3px #173047,0 0 8px #17304788}
+
+/* Openings sit in the quieter side of the painting; evidence occupies a new beat. */
+.chapter-lead{padding-top:clamp(112px,18vh,176px);padding-bottom:clamp(96px,15vh,160px)}
+.chapter-lead .page-chapter-title{margin-bottom:88px}
+.chapter-lead>:is(h3,.relations-thesis,.mechanism-thesis,.pressure-thesis,p){max-width:760px}
+.chapter-lead p{max-width:640px}
+.reading-chapter.opening{padding-top:clamp(112px,18vh,176px)}
+.opening .chapter-intro{padding-bottom:clamp(72px,12vh,128px)}
+.opening .chapter-intro-no{margin-bottom:56px}
+.opening .chapter-intro small{margin-top:20px}
+.opening-head{grid-template-columns:minmax(220px,.75fr) minmax(0,1.25fr);gap:72px;margin:32px 0 112px;max-width:1060px;align-items:start}
+.opening-head .seven{margin-top:8px}
+.opening-head .place-line{color:#f1d29c;font-size:18px}
+.opening-head .body-copy{max-width:570px}
+.case-storyboard{max-width:1040px;padding:0}
+.case-storyboard .story-step{width:78%;min-height:360px;gap:56px;padding:64px 0}
+.case-storyboard .story-step:nth-of-type(even){margin-left:auto;padding-left:0}
+.case-storyboard .story-step:nth-of-type(odd){margin-right:auto}
+.case-storyboard .story-illustration{flex-basis:240px;width:240px;height:190px;filter:drop-shadow(0 2px 2px #23466244)}
+.story-moment-copy .story-index{color:#f8deb0;margin-bottom:18px}
+.story-moment-copy>b{color:#fff5e5}
+.opening-footer{position:relative;max-width:980px;margin:120px auto 0;padding:96px 0 136px}
+.opening-footer .bridge{max-width:880px;font-size:clamp(30px,3.1vw,48px);line-height:1.7}
+.opening-footer .source-note{margin-top:48px}
+
+/* Local chalk underpainting keeps long text legible without flattening the whole scene. */
+.paper-ink{position:relative;isolation:isolate;color:#0e2232;text-shadow:none}
+.paper-ink::before{content:'';position:absolute;inset:-100px calc(-1*min(8vw,var(--reading-gutter)));z-index:-1;pointer-events:none;background:url('painted-clouds.webp') 80% 52%/cover;filter:brightness(1.28);mask-image:radial-gradient(ellipse at 53% 49%,#000 35%,#000e 55%,transparent 80%),linear-gradient(180deg,transparent,#000 14%,#000 84%,transparent),linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent);mask-composite:intersect}
+.reading-chapter .paper-ink .bridge,.reading-chapter .paper-ink .source-note,.reading-chapter .paper-ink p{color:#0e2232;text-shadow:0 1px 0 #dfdfcc33}
+.reading-chapter .paper-ink :is(strong,a,.ending-emphasis){color:#4d2b12}
+
+/* The original paintings dissolve into the surrounding paper, with no framed edges. */
+.relationship-frame,.wordcloud-frame{max-width:1440px;width:calc(100% + var(--reading-gutter)*2);margin-left:calc(-1*var(--reading-gutter));overflow:hidden}
+.relationship-scene{background:none}
+.relationship-scene::before{background:url('relations-handdrawn-reference.webp') center/cover;mask-image:radial-gradient(ellipse at 57% 52%,#000 43%,#000e 62%,transparent 89%),linear-gradient(180deg,transparent,#000 12%,#000 82%,transparent),linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent);mask-composite:intersect}
+.relationship-stage-viewport{overflow:hidden}
+.wordcloud-scene .voices-art{mask-image:radial-gradient(ellipse at 51% 49%,#000 42%,#000e 64%,transparent 91%),linear-gradient(180deg,transparent,#000 10%,#000 84%,transparent),linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent);mask-composite:intersect}
+.relationship-controls{margin-bottom:48px}
+.voices-lead{padding-top:112px;padding-bottom:88px}
+.voices-page #voices-heading{max-width:1000px;line-height:1.5}
+.voices-page .voices-copy{max-width:100%}
+.voices-copy p:nth-child(2),.voices-copy blockquote{margin-left:clamp(32px,19vw,330px);max-width:720px}
+.voices-copy p:nth-child(2){margin-top:112px}
+.voices-statistic .voices-corpus-summary{max-width:730px}
+.voices-page .voices-statistic{margin-top:40px;margin-bottom:112px}
+.voices-stat-row{margin-top:40px;gap:12px 36px}
+.voices-statistic #voices-recognition{gap:10px}
+.voices-statistic .voices-stat-conclusion{color:#fff5e6}
+.reading-chapter :is(.relations-footnote,.voices-source-note,.mechanism-footnote,.pressure-footnote,.defenses-footnote){color:#f0eadd;text-shadow:0 1px 2px #18314888}
+
+/* Wider, shorter text measures for the two scroll narratives. */
+.mechanism-page .mechanism-reader{grid-template-columns:minmax(300px,.88fr) minmax(0,1.12fr);gap:clamp(48px,7vw,100px)}
+.mechanism-page .mechanism-panel{min-height:clamp(420px,74vh,720px);padding:80px 0 112px}
+.mechanism-panel h3{font-size:clamp(30px,2.8vw,44px);text-wrap:pretty}
+.mechanism-step-note{color:#ece4d0}
+.mechanism-screen{border-color:#e6d2a566;box-shadow:0 8px 40px #17354c26}
+.pressure-page .pressure-exploration{padding-top:32px}
+.pressure-page .pressure-board-heading{justify-content:flex-start;align-items:baseline;gap:36px;flex-wrap:wrap}
+.pressure-page .pressure-transfer-explainer{margin-top:112px}
+.pressure-transfer-steps{max-width:900px}
+.pressure-transfer-steps li{max-width:680px;padding:64px 0;min-height:300px;border:0}
+.pressure-transfer-steps li:nth-child(2){margin-left:12%}
+.pressure-transfer-steps li:nth-child(3){margin-left:24%}
+.pressure-transfer-steps li+li::before{left:-40px;top:46px;color:#f1d29c}
+.pressure-transfer-takeaway{margin-top:72px}
+.defenses-reader{grid-template-columns:300px minmax(0,1fr);gap:clamp(56px,8vw,128px)}
+.defenses-page .defenses-phases{flex-direction:column;gap:6px;font-size:17px}.defenses-phases span{white-space:nowrap}
+.defenses-panel{min-height:clamp(440px,74vh,760px);padding:80px 0 112px}
+.defenses-panel h3{font-size:clamp(30px,2.8vw,44px)}
+.ending-page .ending-copy{margin-top:112px;padding-top:32px;padding-bottom:24px;font-size:clamp(22px,1.95vw,29px)}
+.ending-page .ending-copy.paper-ink{position:relative;inset:auto}
+.ending-page .paper-ink .ending-closing-sentence{color:inherit}
+.ending-page .ending-replay{color:#fff0cf}
+.ending-page .ending-copy p{margin-bottom:72px}
+
+@media(min-width:1680px){
+  .relationship-frame,.wordcloud-frame{margin-inline:auto}
+}
+@media(max-width:1000px){
+  .opening-head{gap:48px}.case-storyboard .story-step{width:92%;gap:40px}
+  .case-storyboard .story-illustration{flex-basis:200px;width:200px;height:160px}
+  .mechanism-page .mechanism-reader{grid-template-columns:minmax(240px,.85fr) minmax(0,1fr);gap:40px}
+  .defenses-reader{grid-template-columns:230px minmax(0,1fr);gap:40px}
+  .relationship-frame,.wordcloud-frame{width:calc(100% + 64px);margin-left:-32px}
+}
+@media(max-width:760px){
+  :root{--reading-gutter:28px;--reading-body:21px}
+  .reading-chapter{padding-inline:28px}
+  .chapter-lead{padding:96px 0 72px}.chapter-lead .page-chapter-title{margin-bottom:56px}
+  .reading-chapter.opening{padding-top:96px}.opening .chapter-intro{padding-bottom:56px}
+  .opening-head{grid-template-columns:156px minmax(0,1fr);gap:32px;margin-bottom:64px}
+  .opening-head .seven{width:156px}.seven strong{font-size:156px}.seven>span{font-size:42px}.waveform{width:156px}
+  .opening-head h2{font-size:30px}.opening-head .place-line{font-size:16px}.opening-head .body-copy{margin-top:24px}
+  .case-storyboard .story-step{width:100%;gap:32px;min-height:320px;padding:48px 0}
+  .case-storyboard .story-illustration{flex-basis:170px;width:170px;height:140px}
+  .story-moment-copy>b{font-size:30px}
+  .opening-footer{margin-top:64px;padding:64px 0 96px}
+  .voices-lead{padding-top:80px;padding-bottom:56px}
+  .voices-copy p:nth-child(2),.voices-copy blockquote{margin-left:7vw}.voices-copy p:nth-child(2){margin-top:72px}
+  .voices-page .voices-statistic{margin-bottom:72px}
+  .voices-stat-row{gap:16px 24px}.voices-statistic #voices-recognition>strong{font-size:88px}.voices-statistic #voices-recognition>span{font-size:30px}
+  .voices-statistic #voices-title-dots{width:240px}.voices-statistic .voices-stat-conclusion{font-size:20px}
+  .relationship-frame,.wordcloud-frame{width:calc(100% + 56px);margin-left:-28px}
+  .mechanism-page .mechanism-reader,.defenses-reader{display:block}
+  .mechanism-sticky{position:relative;top:auto;max-height:none;margin-bottom:48px}
+  .mechanism-scene-frame{width:min(100%,380px)}
+  .mechanism-page .mechanism-panel{min-height:0;padding:56px 0 72px}
+  .mechanism-panel+.mechanism-panel{border-top:1px solid #d4daca55}
+  .defenses-sticky{position:static;margin-bottom:40px}
+  .defenses-page .defenses-phases{flex-direction:row;gap:24px!important}
+  .defenses-page .defenses-path{flex-direction:row;flex-wrap:wrap;gap:8px 24px}
+  .defenses-page .defenses-node{width:auto;min-height:48px;padding:8px 0;display:block}
+  .defenses-node .defenses-art{display:none}.defenses-node-name{font-size:20px}.defenses-node:nth-of-type(4){margin-top:0}
+  .defenses-panel{min-height:0;padding:56px 0 72px;border-bottom:1px solid #d4daca44}
+  .pressure-transfer-steps li{margin-left:0!important;max-width:100%;min-height:260px}
+  .pressure-transfer-steps li+li::before{display:none}
+  .ending-page .ending-copy{margin-top:72px}
+}
+@media(max-width:480px){
+  :root{--reading-gutter:24px}
+  .reading-chapter{padding-inline:24px}
+  .opening-head{grid-template-columns:1fr;gap:32px}.opening-head .seven{justify-self:start}
+  .case-storyboard .story-step{flex-direction:column;align-items:start;gap:24px}
+  .case-storyboard .story-illustration{flex-basis:120px;width:180px;height:120px}
+  .voices-copy p:nth-child(2),.voices-copy blockquote{margin-left:0}
+  .voices-stat-row{gap:20px}.voices-statistic #voices-title-dots{width:170px}
+  .voices-statistic #voices-recognition>strong{font-size:76px}.voices-statistic #voices-recognition>span{font-size:26px}
+  .relationship-frame,.wordcloud-frame{width:calc(100% + 48px);margin-left:-24px}
+  .defenses-page .defenses-phases{flex-direction:column;gap:6px!important}
+}
+@media(max-width:640px){.relationship-frame{overflow:auto;overscroll-behavior-x:contain}}
+@media(prefers-reduced-motion:reduce){.paper-layer{will-change:auto}}

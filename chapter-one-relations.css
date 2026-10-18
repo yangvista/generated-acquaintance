@@ -1,0 +1,62 @@
+/* A painted relationship scene. Data live in 24 case points, not the backdrop portraits. */
+.relations-page{position:relative;isolation:isolate;overflow:hidden;color:#fff4e1;font-family:var(--serif);background:#3e5b76 url('relations-handdrawn-reference.webp') center/cover no-repeat;--rel-work:#f4d49c;--rel-family:#ffc0a7;--rel-friend:#c9e9de}
+.relations-page::before{content:'';position:absolute;inset:0;z-index:0;pointer-events:none;background:linear-gradient(90deg,#172c43ed 0%,#1d364bdd 24%,#213f575c 43%,#203e5326 100%),linear-gradient(0deg,#142e46e0,transparent 24%)}
+.relations-page [hidden]{display:none!important}
+.relations-page button,.relations-page a{font-family:var(--serif)}
+.relations-page button{color:inherit}
+.relations-page button:focus-visible,.relations-page a:focus-visible{outline:3px solid #fff4e1;outline-offset:6px}
+.relations-chapter-title{position:absolute;z-index:4;left:96px;top:56px}
+.relations-copy{position:absolute;z-index:4;left:96px;top:206px;width:548px;--relation-statement-size:56px}
+.rel-kicker{margin:0;color:var(--rel-work);font:600 28px/1.4 var(--serif)}
+.relations-copy h3{margin:0;font:600 var(--relation-statement-size)/1.28 var(--serif);letter-spacing:-.02em}
+.relations-thesis{margin:20px 0 0;font:600 var(--relation-statement-size)/1.28 var(--serif);letter-spacing:-.02em}
+.relations-thesis strong{font-weight:700;color:var(--rel-work)}
+.relations-deck{margin:18px 0 0;font:600 28px/1.6 var(--serif);color:#edf0e6;text-wrap:pretty}
+.relations-source-mark{position:relative;top:-.4em;margin-left:2px;color:var(--chapter-title-color);font-size:.75em;line-height:0;vertical-align:baseline}
+.relation-count-head{display:flex;align-items:center;justify-content:space-between;margin-top:18px;gap:16px;font:600 23px/1.5 var(--serif);color:#e0e6df}
+#relations-reset{padding:4px 0;border:0;border-bottom:1px solid #e0c89c99;background:transparent;font-size:23px;color:var(--rel-work)}
+.relation-filter-button{position:relative;display:flex;align-items:baseline;gap:12px;width:100%;padding:8px 0 12px;border:0;background:transparent;text-align:left;--group-color:var(--rel-work)}
+.relation-filter-button[data-group="family"]{--group-color:var(--rel-family)}
+.relation-filter-button[data-group="friend"]{--group-color:var(--rel-friend)}
+.relation-filter-button>span{flex:1;font-size:27px;font-weight:600;white-space:nowrap}
+.relation-filter-button>strong{font-size:46px;line-height:1.1;color:var(--group-color);font-weight:600}
+.relation-filter-button>small{font-size:23px;color:#d2dfdf}
+.relation-filter-button>i{position:absolute;left:0;bottom:5px;width:var(--case-share);height:2px;background:var(--group-color);opacity:.65;transform-origin:bottom;transition:transform .15s,opacity .15s}
+.relation-filter-button:hover>i,.relation-filter-button[aria-pressed="true"]>i{transform:scaleY(2);opacity:1}
+.relation-filter-button[aria-pressed="true"]>span{color:var(--group-color)}
+#relationship-lines{position:absolute;inset:0;width:100%;height:100%;z-index:1;pointer-events:none;overflow:visible}
+.relationship-line{fill:none;stroke:var(--group-color);stroke-width:1.5;opacity:.4;transition:opacity .2s}
+.relationship-line.is-active{opacity:1;stroke-width:3}
+.relationship-line.is-dimmed{opacity:.08}
+#relationship-nodes{position:absolute;inset:0;z-index:2;pointer-events:none}
+.relation-node{position:absolute;left:var(--node-x);top:var(--node-y);transform:translate(-50%,-50%);width:48px;height:48px;padding:0;border:0;background:transparent;pointer-events:auto;transition:opacity .2s;touch-action:manipulation}
+.relation-node::before{content:'';position:absolute;inset:14px;border-radius:50%;background:var(--group-color);box-shadow:0 0 14px 3px color-mix(in srgb,var(--group-color) 55%,transparent);transition:transform .15s}
+.relation-node::after{content:'';position:absolute;inset:6px;border:1px solid var(--group-color);border-radius:50%;opacity:.65;transition:inset .15s,opacity .15s}
+.relation-node:hover::before,.relation-node:focus-visible::before,.relation-node[aria-pressed="true"]::before{transform:scale(1.35)}
+.relation-node:hover::after,.relation-node[aria-pressed="true"]::after{inset:0;opacity:1}
+.relation-node.is-dimmed{opacity:.2}
+.relation-node-label{position:absolute;left:50%;bottom:55px;transform:translateX(-50%);width:max-content;max-width:270px;padding:8px 14px;background:#1b344bef;color:#fff4e1;text-align:center;font:600 22px/1.4 var(--serif);opacity:0;visibility:hidden;pointer-events:none}
+.relation-node.has-label-below .relation-node-label{top:55px;bottom:auto}
+.relation-node:hover .relation-node-label,.relation-node:focus-visible .relation-node-label,.relation-node[aria-pressed="true"] .relation-node-label{opacity:1;visibility:visible}
+.relation-group-label{position:absolute;z-index:2;color:var(--group-color);font:600 36px/1.2 var(--serif);white-space:nowrap;pointer-events:none;text-shadow:0 2px 8px #152a40}
+.relation-group-label strong{margin-left:16px;font-size:62px;font-weight:600}.relation-group-label>span{margin-left:8px;font-size:32px}
+.rel-label-family{left:700px;top:478px;--group-color:var(--rel-family)}
+.rel-label-friend{right:96px;top:510px;--group-color:var(--rel-friend)}
+.relation-center-label{position:absolute;z-index:2;left:1264px;top:805px;padding:4px 12px;color:#fff0d4;background:#29445b8c;font:600 28px/1.5 var(--serif)}
+.relations-footnote{position:absolute;z-index:4;left:96px;right:96px;bottom:28px;display:flex;align-items:flex-end;justify-content:space-between;gap:60px;font:600 21px/1.6 var(--serif);color:#dce6e5}
+.relations-footnote p{margin:0}.relations-footnote p:first-child{flex-shrink:0}.relations-footnote p:last-child{max-width:1040px;text-align:right}
+.relations-footnote a{color:var(--rel-work);white-space:nowrap}
+.relation-key-dot{display:inline-block;width:12px;height:12px;margin-right:8px;border-radius:50%;background:var(--rel-work)}
+.relation-selection-status{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+.relationship-detail{position:absolute;z-index:5;left:72px;top:190px;width:592px;height:790px;padding:22px 24px;background:linear-gradient(90deg,#192f45f7,#203b51ed);border-radius:4px}
+#relation-detail-close{padding:4px 0 14px;border:0;border-bottom:1px solid #dfc79888;background:transparent;color:#f4d49c;font-size:26px}
+.relationship-detail-scroll{height:calc(100% - 64px);margin-top:24px;padding-right:16px;overflow-y:auto;overscroll-behavior:contain;scrollbar-color:#ddc496 #25425a;scrollbar-width:thin}
+.relationship-detail .rel-kicker{font-size:24px}
+#relationship-case-title{margin:18px 0 0;font:700 38px/1.35 var(--serif);text-wrap:balance;outline:none}
+.relationship-case-person{margin:14px 0 28px;color:#f4d49c;font:600 29px/1.5 var(--serif)}
+.relationship-detail dl{margin:0}.relationship-detail dt{margin:24px 0 8px;color:#bfcfda;font-size:23px}.relationship-detail dd{margin:0;color:#f2f1e6;font:600 26px/1.65 var(--serif);overflow-wrap:anywhere}
+.relationship-detail .relationship-case-money{font:600 42px/1.3 var(--serif);color:#ffc0a7}
+.relationship-case-coding{margin:30px 0 14px;font-size:21px;line-height:1.65;color:#c9d8df}
+#relationship-case-sources{display:flex;flex-wrap:wrap;gap:14px 24px;padding-bottom:20px;font-size:25px;color:#f4d49c}
+.opening-next{margin-top:6px;font-weight:700}
+@media(prefers-reduced-motion:reduce){.relationship-line,.relation-node,.relation-node::before,.relation-node::after,.relation-filter-button>i{transition:none}}

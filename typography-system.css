@@ -1,0 +1,64 @@
+/* Selected pairing B. The renamed OFL subset preserves the supplied Yozai letterforms. */
+@font-face{
+  font-family:'Trust Handwriting B';
+  src:url('fonts/trust-hand-b.woff2') format('woff2');
+  font-style:normal;font-weight:400;font-display:swap;
+}
+@font-face{
+  font-family:'Trust Reasoning Kai';
+  src:url('fonts/trust-reasoning-kai.woff2') format('woff2');
+  font-style:normal;font-weight:400;font-display:swap;
+}
+:root{
+  --type-hand:'Trust Handwriting B','Kaiti SC','STKaiti','KaiTi',serif;
+  --type-body:'PingFang SC','Microsoft YaHei','Noto Sans CJK SC',sans-serif;
+  --type-reason:'Trust Reasoning Kai','Kaiti SC','STKaiti','KaiTi',serif;
+  --type-case:'Songti SC','STSong','Noto Serif CJK SC',serif;
+  --type-note:var(--type-body);
+  --type-note-size:clamp(15px,1.1vw,17px);
+  --type-note-color:#cbd9e1;
+  --type-note-link:#c5dfe9;
+  /* Older modules used this variable for all text; explicit case scopes retain Songti. */
+  --serif:var(--type-body);--sans:var(--type-body);--mono:var(--type-body);
+  --chapter-title-font:var(--type-hand);--chapter-title-weight:400;
+  --chapter-title-tracking:.015em;--chapter-title-word-spacing:0;
+}
+body.longform-body{font-family:var(--type-body)}
+/* Titles and editorial questions carry the handwriting; existing sizes and colors remain. */
+.longform-body [data-type-role="heading"],
+.longform-body [data-type-role="question"],
+.longform-body [data-type-role="closing"]{
+  --serif:var(--type-hand);
+  font-family:var(--type-hand)!important;
+  font-weight:400!important;font-style:normal!important;
+  letter-spacing:.015em!important;
+  font-synthesis:style;
+}
+.longform-body .page-chapter-title{font-family:var(--chapter-title-font)!important;word-spacing:var(--chapter-title-word-spacing);white-space:normal;text-wrap:pretty}
+.longform-body .page-chapter-title>span{font-family:inherit;font-weight:inherit;font-style:inherit;letter-spacing:inherit}
+#top .title-prefix{font-family:var(--type-hand);font-weight:400;font-style:normal}
+#top .title-art{font-family:var(--type-case)}
+/* Case facts keep Songti, including inherited text inside their detail views. */
+.longform-body [data-type-role="case"]{--serif:var(--type-case);font-family:var(--type-case)!important}
+.longform-body [data-type-role="reasoning"]{--serif:var(--type-reason);font-family:var(--type-reason)!important}
+.longform-body :is(.mechanism-step-summary,.defenses-action-copy,.voices-research-note,.ending-copy){font-family:var(--type-reason)}
+.longform-body :is(.relation-filter-button,.relation-group-label,.defenses-node,.defenses-money-legend,.pressure-filter,.reading-menu){font-family:var(--type-body)}
+/* Source notes have one cool, quiet style across chapters and popovers. */
+.longform-body [data-type-role="note"],
+.longform-body [data-type-role="note"] :is(p,a,button,span,strong,small){
+  font-family:var(--type-note)!important;
+  font-size:var(--type-note-size)!important;
+  font-weight:400!important;font-style:normal!important;
+  line-height:1.75!important;letter-spacing:.015em!important;
+  color:var(--type-note-color)!important;
+}
+.longform-body [data-type-role="note"]{text-shadow:0 1px 2px #18324799}
+.longform-body [data-type-role="note"] a,
+.longform-body a[data-type-role="note"]{color:var(--type-note-link)!important;text-decoration-thickness:1px;text-underline-offset:4px}
+.longform-body [data-type-role="note"] a:hover,
+.longform-body [data-type-role="note"] a:focus-visible{color:#eff8fa!important}
+.longform-body :is(.mechanism-image-note,.source-note.attached-note,.defenses-footnote,.voices-source-note){margin-top:16px}
+.longform-body #relationship-case-sources,.longform-body #pressure-detail-sources{gap:10px 16px}
+
+/* Platform provenance labels are inserted when the reader opens the source dialog. */
+.longform-body .voices-original-title>span{font-family:var(--type-note);font-size:15px;font-weight:400;line-height:1.75;color:var(--type-note-color)}

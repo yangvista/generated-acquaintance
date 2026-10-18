@@ -1,0 +1,23 @@
+/* Shared chapter titles, measured on the 1920 × 1080 editorial canvas. */
+:root{
+  --chapter-title-font:var(--serif);
+  --chapter-title-size:112px;
+  --chapter-title-weight:600;
+  --chapter-title-leading:.9;
+  --chapter-title-tracking:0px;
+  --chapter-title-word-spacing:0px;
+  --chapter-title-gap:28px;
+  --chapter-title-color:#f1d29c;
+}
+.page-chapter-title{
+  display:inline-flex;
+  align-items:baseline;
+  gap:var(--chapter-title-gap);
+  margin:0;
+  color:var(--chapter-title-color);
+  font:var(--chapter-title-weight) var(--chapter-title-size)/var(--chapter-title-leading) var(--chapter-title-font);
+  letter-spacing:var(--chapter-title-tracking);
+  word-spacing:var(--chapter-title-word-spacing);
+  white-space:nowrap;
+}
+.page-chapter-title>span{font:inherit;color:inherit;letter-spacing:inherit;word-spacing:inherit}

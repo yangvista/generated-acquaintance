@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<link as="font" crossorigin="anonymous" href="fonts/trust-hand-b.woff2" rel="preload" type="font/woff2"/><meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>被生成的熟人｜数据新闻</title>
+<link href="cover-opening-call.css" rel="stylesheet"/>
+<script defer="" src="cover-opening-call.js?v=ending-20260909"></script>
+<link href="editorial-type.css" rel="stylesheet"/>
+<link href="chapter-one-relations.css" rel="stylesheet"/>
+<script defer="" src="data.js"></script>
+<script defer="" src="chapter-one-relations.js?v=final-20260910"></script>
+<link href="chapter-one-voices.css" rel="stylesheet"/>
+<script defer="" src="chapter-one-voices.js?v=awareness-painted-river-1"></script>
+<link href="chapter-two-mechanism.css" rel="stylesheet"/>
+<script defer="" src="chapter-two-mechanism.js?v=longform-1"></script>
+<link href="chapter-three-pressure.css" rel="stylesheet"/>
+<script defer="" src="chapter-three-pressure.js?v=refine-1"></script>
+<link href="chapter-four-defenses.css" rel="stylesheet"/>
+<script defer="" src="chapter-four-defenses.js?v=final-20260910"></script>
+<link href="ending.css?v=hover-20260909" rel="stylesheet"/>
+<script defer="" src="ending-motion.js?v=awareness-painted-river-1"></script>
+<script defer="" src="ending-face-motion.js?v=final-20260910"></script>
+<script defer="" src="ending-hover.js?v=refine-1"></script>
+<style>
+    :root{
+      --night:#1c2b3b;
+      --deep:#263b50;
+      --slate:#4e6680;
+      --mist:#dfe7e7;
+      --paper:#f3f0e7;
+      --ink:#253746;
+      --muted:#b8c7cc;
+      --gold:#e4b86c;
+      --coral:#d7816c;
+      --rule:#8da2ae66;
+      --serif:'Songti SC','STSong','Noto Serif CJK SC',serif;
+      --sans:var(--serif);
+      --mono:var(--serif);
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth;background:var(--night)}
+    body{margin:0;padding-top:58px;background:var(--night);color:var(--paper);font:24px/1.75 var(--sans);overflow-x:hidden}
+    /* Each page uses a 1920 × 1080 canvas; the frame reserves its scaled size. */
+    .landscape-frame{position:relative;width:min(100%,calc((100svh - 58px)*16/9));aspect-ratio:16/9;margin:0 auto;scroll-margin-top:58px;overflow:hidden}
+    .landscape-canvas{width:1920px;height:1080px;transform:scale(var(--page-scale,1));transform-origin:top left}
+    body::after{content:'';display:block;height:max(0px,calc(100svh - 58px - 56.25vw))}
+    a{color:inherit;text-underline-offset:4px}
+    button{font:inherit;cursor:pointer}
+    .preview-bar{position:fixed;z-index:10;top:0;left:0;right:0;height:58px;padding:0 5vw;display:flex;align-items:center;justify-content:space-between;background:#1c2b3bdd;border-bottom:1px solid #b9c8cb55;backdrop-filter:blur(12px);font-size:13px;letter-spacing:.04em}
+    .preview-bar strong{font:18px var(--serif);font-weight:500;letter-spacing:.08em}
+    .preview-bar span{color:var(--muted)}
+    .cover-page{position:relative;isolation:isolate;display:flex;align-items:flex-start;padding:220px 154px 0;overflow:hidden}
+    .cover-page::before{content:'';position:absolute;inset:0;z-index:-2;background:url('trust-break-reference.webp') center/cover no-repeat;filter:saturate(.83) contrast(.96)}
+    .cover-page::after{content:'';position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,#1d2e42ef 0%,#1d2e42cc 27%,#1d2e4238 61%,transparent 100%),linear-gradient(0deg,#1d2e42dd 0%,transparent 38%),linear-gradient(180deg,#1d2e4240,transparent 25%)}
+    .cover-copy{width:1100px;padding-top:0}
+    .eyebrow{margin:0 0 25px;color:var(--gold);font:16px var(--mono);letter-spacing:.14em;text-transform:uppercase}
+    h1{margin:0;font:138px/1.05 var(--serif);font-weight:500;letter-spacing:-.055em;text-wrap:balance}
+    h1 em{font-style:normal;color:var(--gold)}
+    .title-art{display:inline-block;position:relative;color:transparent;white-space:nowrap}
+    .title-art img{position:absolute;width:3.65em;max-width:none;height:auto;left:-.77em;top:-.63em;pointer-events:none}
+    .subtitle{margin:22px 0 0;font:43px/1.35 var(--sans);letter-spacing:.06em;color:#f3f1e9}
+    .cover-deck{margin:42px 0 0;max-width:23em;color:#dce5e3;font:28px/1.9 var(--serif)}
+    .cover-actions{display:flex;align-items:center;gap:28px;margin-top:36px}
+    .action-button{border:0;border-left:3px solid var(--gold);background:var(--coral);color:#202d3b;padding:14px 22px;font-weight:700;letter-spacing:.03em;box-shadow:7px 7px 0 #18273777}
+    .action-button span{margin-left:24px;font-size:20px}
+    .quiet-link{text-decoration:none;color:#e5ece9;border-bottom:1px solid #d5e1df99;padding:11px 0}
+    .simulation-note{margin-top:16px;color:#c1d0d0;font-size:16px}
+    .cover-meta{position:absolute;left:154px;right:154px;bottom:30px;display:flex;justify-content:space-between;color:#d6dfdc;font:16px var(--mono);letter-spacing:.04em}
+    .cover-meta a{text-decoration:none}
+
+    /* Opening: one full painted scene, with larger type and four staggered events. */
+    .opening{position:relative;padding:56px 96px 48px;background:#536c83 url('opening-handdrawn-reference.webp') center/cover no-repeat;color:#fff5e4;overflow:hidden;--opening-gold:#f1d29c;--opening-coral:#ffb49c;--opening-mint:#c7e6d8}
+    .opening::before{content:'';position:absolute;inset:0;background:linear-gradient(100deg,#172d42b3,#213c526b 62%,#172d4280);pointer-events:none}
+    .opening-inner{position:relative;z-index:1;max-width:1728px;margin:auto}
+    .chapter-intro{display:grid;grid-template-columns:112px 1fr 320px;gap:28px;align-items:center}
+    .chapter-intro h2{margin:0;font:700 76px/1.15 var(--serif);letter-spacing:-.025em}
+    .chapter-intro small{color:#ecdfc6;font:600 26px/1.5 var(--serif)}
+    .opening-head{display:grid;grid-template-columns:320px 1fr;gap:80px;align-items:center;margin-top:28px}
+    .seven{position:relative;display:flex;align-items:baseline;gap:8px;color:var(--opening-gold);font-family:var(--serif)}
+    .seven strong{font-size:320px;font-weight:600;line-height:.9;letter-spacing:-.04em}
+    .seven>span{font:700 72px/1 var(--serif)}
+    .waveform{position:absolute;left:0;width:284px;bottom:-12px;height:24px;border-bottom:2px solid #f1d29c99;transform:rotate(-4deg)}
+    .place-line{margin:0 0 12px;color:#f0e4cd;font:600 26px/1.5 var(--serif)}
+    .opening-head h2{margin:0;font:700 68px/1.12 var(--serif);letter-spacing:-.025em}
+    .opening-head h2 span{color:var(--opening-gold)}
+    .body-copy{max-width:44em;margin:18px 0 0;color:#fff5e4;font:600 30px/1.6 var(--serif)}
+    .body-copy strong{color:var(--opening-gold);font-weight:700}
+    .case-storyboard{position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:44px;margin-top:24px;padding-bottom:30px}
+    .storyboard-track{position:absolute;left:7%;right:10%;top:156px;height:98px;border-top:2px solid #f1d29caa;border-radius:50%;transform:rotate(-3deg);pointer-events:none}
+    .story-step{position:relative;min-height:300px;padding:0;border:0;background:transparent;transition:transform .25s ease;--event-shift:0px;transform:translateY(var(--event-shift))}
+    .story-step:nth-of-type(2){--event-shift:22px}
+    .story-step:nth-of-type(3){--event-shift:-10px}
+    .story-step:nth-of-type(4){--event-shift:30px}
+    .story-step:hover{transform:translateY(calc(var(--event-shift) - 6px))}
+    .story-index{display:flex;gap:16px;align-items:baseline;color:#fff5e4;font:600 28px/1.25 var(--serif)}
+    .story-index strong{font:600 48px/1.1 var(--serif);color:var(--opening-gold)}
+    .story-illustration{position:relative;display:grid;place-items:center;width:248px;height:168px;margin:10px 0 12px;color:var(--opening-gold)}
+    .story-illustration svg{width:100%;height:100%;stroke:currentColor;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round;fill:none}
+    .story-illustration strong{position:absolute;bottom:0;right:-40px;color:var(--opening-coral);font:700 48px/1.1 var(--serif)}
+    .story-illustration strong span{margin-left:6px;font:600 26px var(--serif)}
+    .story-step>b{display:block;max-width:11em;color:#fff5e4;font:700 34px/1.38 var(--serif)}
+    .story-step:nth-of-type(2) .story-illustration{color:#f4e9d7}
+    .story-step:nth-of-type(3) .story-illustration,.story-step:nth-of-type(3) .story-index strong{color:var(--opening-coral)}
+    .story-step:nth-of-type(4) .story-illustration,.story-step:nth-of-type(4) .story-index strong{color:var(--opening-mint)}
+    .opening-footer{display:flex;align-items:flex-end;justify-content:space-between;gap:52px;margin-top:24px}
+    .bridge{margin:0;color:#fff5e4;font:600 44px/1.38 var(--serif);letter-spacing:-.02em}
+    .bridge strong{color:var(--opening-gold);font-weight:700}
+    .source-note{flex:0 0 420px;margin:0 0 4px;color:#e4e8df;font:600 22px/1.7 var(--serif)}
+    .source-note a{display:inline-block;color:var(--opening-gold)}
+    @media(max-width:600px){.preview-bar{padding:0 16px}.preview-bar span{display:none}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.story-step{transition:none}}
+  </style>
+<link href="longform.css?v=longform-1" rel="stylesheet"/><script defer="" src="longform.js?v=final-20260910"></script><link href="painted-reading.css?v=paint-6" rel="stylesheet"/><script defer="True" src="painted-reading.js?v=paint-1"></script><link href="reading-groups.css?v=groups-3" rel="stylesheet"/><script defer="True" src="reading-groups.js?v=final-20260910"></script><link href="narrative-refinement.css?v=luminous-river-2" rel="stylesheet"/><link href="typography-system.css?v=reasoning-kai-1" rel="stylesheet"/></head>
+<body class="longform-body"><div aria-hidden="true" class="paper-atmosphere"><div class="paper-layer" data-paint="opening" style="opacity:1"></div><div class="paper-layer" data-paint="city" style="opacity:0"></div><div class="paper-layer" data-paint="horizon" style="opacity:0"></div><div class="paper-layer" data-paint="clouds" style="opacity:0"></div><div class="paper-layer" data-paint="thread" style="opacity:0"></div></div><svg aria-hidden="true" class="reading-svg-defs" height="0" width="0"><defs><filter color-interpolation-filters="sRGB" id="word-painted-ink"><feColorMatrix type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  3.4 0 -3.4 0 -0.13"></feColorMatrix></filter></defs></svg>
+<div class="preview-bar"><strong>被生成的熟人</strong><details class="reading-menu"><summary>目录</summary><nav aria-label="章节目录"><a href="#top">封面</a><a href="#opening">序</a><a href="#relations">PART 01 · 信任如何被调用</a><a href="#voices">我们在辨认什么</a><a href="#mechanism">PART 02 · 身份如何继续生效</a><a href="#pressure">PART 03 · 付款如何被推进</a><a href="#defenses">PART 04 · 我们如何重新交付信任</a><a href="#ending">尾声</a></nav></details></div>
+<div class="landscape-frame" id="top">
+<section class="cover-page landscape-canvas">
+<div class="cover-copy">
+<h1><span class="title-prefix">被生成的</span><span class="title-art"><span aria-hidden="true">熟人</span><img alt="熟人" height="1024" src="title-shuren-gold.webp" width="1536"/></span></h1>
+<p class="subtitle">AI视频通话诈骗路径及治理</p>
+<div class="cover-actions"><button aria-controls="call-dialog" aria-haspopup="dialog" class="action-button" id="start-call" type="button">接听阿杰的来电 <span>↗</span></button><a class="quiet-link" href="#opening">直接阅读 ↓</a></div>
+<p class="simulation-note" data-type-role="note">来电为虚构情境 · 人像由 AI 生成</p>
+</div>
+</section>
+</div>
+<div class="chapter-shell" id="opening">
+<section class="opening reading-chapter">
+<div class="opening-inner">
+<div class="chapter-intro" data-reading-paint="opening"><span class="chapter-intro-no page-chapter-title" data-type-role="heading">序</span><h2 data-type-role="case">一通“表哥”的视频，<br/>让他转出了 30 万元。</h2></div>
+<div class="opening-head" data-reading-paint="city"><div class="seven"><strong>7</strong><span>秒</span><div class="waveform"></div></div><div><p class="place-line" data-type-role="note">山东商河 · 2023年5月底</p><h2 data-type-role="case">视频里的“表哥”，<br/><span>想借他的账户转一笔钱。</span></h2><p class="body-copy" data-type-role="case">冯某收到“表哥”的私信，加了对方的 QQ。视频接通了 <strong>7 秒</strong>，他认出了熟悉的长相和声音。</p></div></div>
+<div aria-label="商河案从视频到转款的四个步骤" class="transfer-journey opening-journey"><svg aria-hidden="true" class="transfer-rope" preserveAspectRatio="none"><path class="rope-route-track" fill="none" pathLength="1"></path><path class="rope-route-fibre" fill="none" pathLength="1"></path><path class="rope-route-fibre rope-route-fibre--fine" fill="none" pathLength="1"></path><path class="rope-route-fibre rope-route-fibre--warm" fill="none" pathLength="1"></path></svg><ol class="pressure-transfer-steps opening-rope-steps"><li class="rope-step" data-reading-paint="horizon"><span aria-hidden="true" class="rope-knot">01</span><div class="rope-step-copy" data-type-role="case"><strong>先答应代转，再收到一张截图</strong><p>对方说网络不好，转为打字。他称自己的账户转款不方便，承诺<strong>先给冯某转 65 万元</strong>，再请冯某转给指定账户。随后，一张写着冯某姓名和账号的转款截图发来了。</p></div><div aria-hidden="true" class="story-illustration"><svg viewBox="0 0 160 110"><rect height="78" rx="4" width="84" x="38" y="14"></rect><circle cx="80" cy="43" r="12"></circle><path d="M58 77c4-16 40-16 44 0M18 91h124"></path></svg></div></li><li class="rope-step"><span aria-hidden="true" class="rope-knot">02</span><div class="rope-step-copy" data-type-role="case"><strong>截图上有 65 万元，银行卡里却没有</strong><p>冯某查了银行卡，<strong>并未到账</strong>。等了约 20 分钟，对方解释是大额转款有延迟，又催他先垫付。冯某犹豫了。</p></div><div aria-hidden="true" class="story-illustration"><svg viewBox="0 0 160 110"><path d="M25 27h110v59H25zM42 45h66M42 62h82"></path><path d="M111 86l13 14 12-14"></path></svg></div></li><li class="rope-step rope-step--text-only" data-reading-paint="thread"><span aria-hidden="true" class="rope-knot">03</span><div class="rope-step-copy" data-type-role="case"><strong>第二次视频，让他借来并转出 30 万元</strong><p>对方再次主动打来视频。冯某又认出了那张脸，便向朋友借钱，<strong>垫付并转出了 30 万元</strong>。他转出去的是借来的钱，并非对方实际汇来的钱。</p></div></li><li class="rope-step" data-reading-paint="horizon"><span aria-hidden="true" class="rope-knot">04</span><div class="rope-step-copy" data-type-role="case"><strong>真正的表哥，说自己根本没有用钱</strong><p>对方继续催要剩下的 35 万元，冯某又发现对方账号已将自己屏蔽。他拨通真正表哥的电话，这才发现被骗，随后报警。</p><p class="source-note attached-note" data-type-role="note">警方追回了部分钱款。根据央视《焦点访谈》2023 年 7 月 15 日报道整理。<a href="https://news.cctv.com/2023/07/15/ARTIf7KVF1D0H3OUJBcmSEVv230715.shtml" rel="noopener" target="_blank">阅读来源 ↗</a></p></div><div aria-hidden="true" class="story-illustration"><svg viewBox="0 0 160 110"><circle cx="80" cy="51" r="41"></circle><path d="M52 22l56 58M62 28l-9 8c2 18 22 37 40 38l8-10-13-10-7 7c-8-4-13-9-16-16l6-6z"></path></svg><span class="story-icon-caption">识破冒充</span></div></li></ol></div>
+</div>
+</section>
+</div>
+<div class="chapter-shell" id="relations">
+<section aria-labelledby="relations-chapter-title" class="relations-page reading-chapter"><header class="chapter-lead reading-width" data-reading-paint="horizon"><h2 class="relations-chapter-title page-chapter-title" data-type-role="heading" id="relations-chapter-title"><span>PART 01</span><span>信任如何被调用</span></h2><p class="relations-thesis" data-type-role="reasoning">一张熟脸，<br/>带着<strong>情分</strong>，<br/>也带着<strong>权限</strong>。</p></header>
+<p aria-live="polite" class="relation-selection-status" id="relation-selection-status" role="status">正在显示全部 24 起案例</p>
+<div class="relationship-exploration reading-width"><div class="relationship-controls"><p aria-describedby="relations-source-note" class="relations-deck" data-type-role="reasoning">24 起公开案例<sup aria-label="来源注释" class="relations-source-mark">*</sup>里，被冒充者有亲人、旧识，也有能调动公司资金的领导。认出一个人，有时也被当作收到了一份授权。</p><p class="attached-note" data-type-role="note" id="relations-source-note"><span class="relations-source-note-text">* 案例来源：截至2026年9月7日，中国大陆境内公开审理的本类型案件</span><br/><a download="" href="cases.csv">案例与来源 ↓</a></p><div class="relations-copy" id="relations-overview">
+<div class="relation-count-head"><span>24 起主样本的关系结构</span><button id="relations-reset" type="button">显示全部</button></div>
+<div aria-label="按关系筛选案例" class="relation-filters">
+<button aria-pressed="false" class="relation-filter-button" data-group="work" type="button"><span>企业 / 上下级</span><strong data-relation-count="work">14</strong><small>/ 24</small><i aria-hidden="true"></i></button>
+<button aria-pressed="false" class="relation-filter-button" data-group="family" type="button"><span>亲属</span><strong data-relation-count="family">6</strong><small>/ 24</small><i aria-hidden="true"></i></button>
+<button aria-pressed="false" class="relation-filter-button" data-group="friend" type="button"><span>朋友 / 同学 / 熟人</span><strong data-relation-count="friend">4</strong><small>/ 24</small><i aria-hidden="true"></i></button>
+</div>
+</div></div><div class="relationship-visual"><div class="painted-frame relationship-frame" data-canvas-height="980" data-canvas-offset-x="620" data-canvas-offset-y="100" data-canvas-width="1300"><div class="relationship-stage-viewport"><div class="painted-canvas relationship-scene"><svg aria-hidden="true" id="relationship-lines" viewBox="0 0 1920 1080"></svg><div aria-label="24 起公开案例的关系图" id="relationship-nodes" role="group"></div><div aria-hidden="true" class="relation-group-label rel-label-family" data-relation-group="family">亲属 <strong data-relation-count="family">6</strong><span>起</span></div><div aria-hidden="true" class="relation-group-label rel-label-friend" data-relation-group="friend">朋友 / 同学 / 熟人 <strong data-relation-count="friend">4</strong><span>起</span></div><span class="relation-center-label">接到视频的人</span><div aria-hidden="true" class="relation-group-label rel-label-work" data-relation-group="work">企业 / 上下级 <strong data-relation-count="work">14</strong><span>起</span></div></div></div></div><p class="relationship-legend"><span aria-hidden="true" class="relation-key-dot"></span>滑过关系或光点，左右同步高亮 · 点击光点查看案例</p></div></div></section>
+</div>
+<div class="chapter-shell" id="voices">
+<section aria-labelledby="voices-heading" class="voices-page reading-chapter"><header class="voices-lead reading-width" data-reading-paint="city"><div class="voice-question voice-question--zhihu"><div class="question-bubble"><h2 data-type-role="question" id="voices-heading">“朋友亲自视频，也不能信了吗？”</h2></div><p>这是<a href="https://zhuanlan.zhihu.com/p/1903784255177351551" rel="noopener" target="_blank">知乎上一则标题</a>的疑问。</p></div><div class="voice-question voice-question--xiaohongshu"><p>小红书上的另一个问题已经落在付款之后：</p><div class="question-bubble"><blockquote data-type-role="question"><a href="https://www.xiaohongshu.com/explore/69c9e9b3000000001a021c9a" rel="noopener" target="_blank">“钱转出去了，还能要回来吗？”</a></blockquote></div></div></header>
+<div class="voices-evidence reading-width"><div class="voices-statistic">
+<p aria-describedby="voices-collection-note" class="voices-corpus-summary" data-type-role="reasoning">我们从小红书、抖音、知乎、微博，收集了 <span id="voices-source-total">60</span> 条 AI 诈骗相关的公开标题。<sup aria-label="收集说明" class="source-mark">*</sup></p>
+<div class="voices-research-note" data-type-role="reasoning"><p class="voices-research-context">其中只有 <span id="voices-recognition-text">11</span> 条标题谈到了<strong>识别真假</strong>。</p><p class="voices-research-question"><strong>知道 AI 诈骗，不等于意识到熟脸也需要核验。</strong></p><p class="voices-research-purpose">这组标题中，辨认真假的讨论相对有限。本文希望补上对“熟人也可能被冒用”的警觉：帮助读者理解熟悉的脸如何推动付款，让<strong>独立核验</strong>成为转账前的习惯。</p></div><footer class="voices-source-note" data-type-role="note" id="voices-collection-note"><p class="voices-collection-method" data-type-role="note">* 收集方法：按“AI 换脸”“深伪”“诈骗”等关键词检索，经人工筛选，重复标题只算一次。</p><button aria-controls="voices-source-dialog" aria-haspopup="dialog" id="voices-method" type="button">查看收集说明 ↗</button></footer></div><div class="voices-cloud-group"><div class="painted-frame wordcloud-frame" data-canvas-height="700" data-canvas-offset-x="400" data-canvas-offset-y="185" data-canvas-width="1180"><div class="painted-canvas wordcloud-scene"><img alt="蓝灰色手绘城市中的浅金词云：换脸、视频、识别、防范、家人、骗局、声音、深伪、朋友、熟人、转账、破绽、追回。" class="voices-art" height="1152" loading="lazy" src="voices-handdrawn-wordcloud.webp" width="2048"/><div aria-label="点击手绘词云中的词语，查看原题" id="voices-word-hotspots" role="group"></div></div></div><p class="voices-cloud-hint">点击词语，查看平台原题 ↗<button aria-pressed="false" class="voices-motion-toggle" hidden="" type="button">暂停词云动效</button></p></div></div></section>
+</div>
+<div class="chapter-shell" id="mechanism">
+<section aria-labelledby="mechanism-chapter-title" class="mechanism-page reading-chapter"><header class="chapter-lead reading-width" data-reading-paint="horizon"><h2 class="page-chapter-title mechanism-chapter-title" data-type-role="heading" id="mechanism-chapter-title"><span>PART 02</span><span>身份如何继续生效</span></h2><div class="mechanism-intro-layout"><div class="mechanism-intro-copy"><h3 class="mechanism-question" data-type-role="question">“我难道不能相信他？”</h3><p class="mechanism-intro" data-type-role="case">香港的一场预录视频会议，让员工在会后继续执行付款指令。视频会议里没有发生真正的互动，受害者照常以为屏幕对面就是他的领导。</p><a class="mechanism-case-source attached-note" data-type-role="note" href="https://www.info.gov.hk/gia/general/202406/26/P2024062600192p.htm" rel="noopener" target="_blank">案例来源：香港特区政府答复 · 2024-06-26 ↗</a></div><figure class="mechanism-question-art"><img alt="手持手机、托腮思考的年轻人，头顶浮着浅金色问号" height="2048" loading="lazy" src="mechanism-question-person-reference.webp" width="1536"/></figure></div></header>
+<div class="mechanism-reader" data-step="0" id="mechanism-reader"><div class="mechanism-sticky"><div class="mechanism-scene-frame" data-canvas-height="656" data-canvas-width="620"><figure aria-labelledby="mechanism-scene-caption" class="mechanism-screen">
+<img alt="虚构角色阿杰的 AI 合成人像，用于机制示意，非案件当事人。" class="mechanism-face" height="1672" loading="lazy" src="ajie-clean.webp" width="941"/>
+<div aria-hidden="true" class="mechanism-screen-shade"></div>
+<svg aria-hidden="true" class="mechanism-face-mesh" viewBox="0 0 620 656"><g fill="none" stroke="currentColor" stroke-width="1.5"><path d="M162 214 310 143 460 211 476 321 432 462 310 523 181 462 141 319Z M162 214 205 290 310 274 412 286 460 211 M141 319 205 290 238 367 310 385 374 367 412 286 476 321 M181 462 238 367 310 430 374 367 432 462 M310 143V274L238 367M310 274 374 367M181 462 310 480 432 462M310 385V523"></path></g><g fill="currentColor"><circle cx="162" cy="214" r="4"></circle><circle cx="310" cy="143" r="4"></circle><circle cx="460" cy="211" r="4"></circle><circle cx="205" cy="290" r="4"></circle><circle cx="412" cy="286" r="4"></circle><circle cx="310" cy="385" r="4"></circle><circle cx="181" cy="462" r="4"></circle><circle cx="432" cy="462" r="4"></circle><circle cx="310" cy="523" r="4"></circle></g></svg>
+<div class="mechanism-screen-top"><span>阿杰 · 合成人像示意</span><span id="mechanism-scene-count">01 / 04</span></div>
+<div class="mechanism-scene-layer mechanism-source-scene" data-mechanism-art="0"><p>网上公开的影像</p><p>公开声音素材</p></div>
+<div class="mechanism-scene-layer mechanism-playback-scene" data-mechanism-art="1" hidden=""><span aria-hidden="true" class="mechanism-play-symbol">▷</span><p>预录内容正在播放<small>该案中没有实际互动</small></p></div>
+<div class="mechanism-scene-layer mechanism-message-scene" data-mechanism-art="2" hidden=""><span>视频会议已结束</span><p>付款安排继续发来</p><small>同一个身份，从画面延伸到文字。</small></div>
+<div class="mechanism-scene-layer mechanism-account-scene" data-mechanism-art="3" hidden=""><p class="mechanism-loss">约 <strong>2 亿</strong> 港元<small>该案披露的损失</small></p><ol aria-label="付款进入五个本地账户"><li><span>本地账户 1</span><span aria-hidden="true">→</span></li><li><span>本地账户 2</span><span aria-hidden="true">→</span></li><li><span>本地账户 3</span><span aria-hidden="true">→</span></li><li><span>本地账户 4</span><span aria-hidden="true">→</span></li><li><span>本地账户 5</span><span aria-hidden="true">→</span></li></ol></div>
+<figcaption id="mechanism-scene-caption">影像与声音素材</figcaption>
+</figure></div><p class="mechanism-image-note attached-note" data-type-role="note">* 阿杰为 AI 生成的机制示意人像，不对应案件当事人。</p><nav aria-label="查看机制步骤" class="mechanism-route">
+<button aria-controls="mechanism-panel-0" aria-current="step" data-mechanism-step="0" id="mechanism-node-0" type="button"><span>01</span><strong>素材</strong></button>
+<button aria-controls="mechanism-panel-1" data-mechanism-step="1" id="mechanism-node-1" type="button"><span>02</span><strong>画面</strong></button>
+<button aria-controls="mechanism-panel-2" data-mechanism-step="2" id="mechanism-node-2" type="button"><span>03</span><strong>身份</strong></button>
+<button aria-controls="mechanism-panel-3" data-mechanism-step="3" id="mechanism-node-3" type="button"><span>04</span><strong>指令</strong></button>
+</nav><p class="mechanism-scroll-hint" id="mechanism-scroll-hint">继续向下阅读，画面随步骤变化 ↓</p></div>
+<div aria-label="四步机制，向下阅读时画面同步变化" class="mechanism-panels" id="mechanism-scroll" role="region">
+<article aria-labelledby="mechanism-step-title-0" class="mechanism-panel is-active" id="mechanism-panel-0">
+<h3 class="mechanism-step-name" data-type-role="heading" id="mechanism-step-title-0"><span class="mechanism-step-number">01</span><span>当数据成为诈骗素材</span></h3>
+<h4 class="mechanism-step-summary" data-type-role="reasoning" id="mechanism-step-heading-0">一段旧影像，<br/>伪装成一场新会议。</h4>
+<p class="mechanism-step-body" data-type-role="case">香港警方认为，诈骗者下载公司人物在网上公开的影像与声音，经过深度伪造处理，制作了会议内容。</p>
+<p class="mechanism-step-note" data-type-role="reasoning">这是该案披露的素材路径，不代表所有案件的技术实现。</p><p class="mechanism-step-body mechanism-realtime-note" data-type-role="reasoning">在其他公开案例中，这类诈骗视频通话也可以实时互动。骗子可利用人脸、声纹等数据合成画面与声音，并结合行为习惯、双方关系等信息，让冒充更具迷惑性。</p><p class="mechanism-general-source attached-note" data-type-role="note"><a href="https://www.ic3.gov/PSA/2024/PSA241203" rel="noopener noreferrer" target="_blank">关于实时视频与声音伪造：FBI 公开提示 ↗</a></p>
+</article>
+<article aria-labelledby="mechanism-step-title-1" class="mechanism-panel" data-reading-paint="city" id="mechanism-panel-1">
+<h3 class="mechanism-step-name" data-type-role="heading" id="mechanism-step-title-1"><span class="mechanism-step-number">02</span><span>用真素材生成假画面</span></h3>
+<h4 class="mechanism-step-summary" data-type-role="reasoning" id="mechanism-step-heading-1">原始的真实素材，<br/>可以生成无数个新的视频通话画面。</h4>
+<p class="mechanism-step-body" data-type-role="case">香港特区政府披露，这场会议为预录内容，双方没有实际互动。“正在视频”与“正在实时回应”，并不是同一件事。</p>
+</article>
+<article aria-labelledby="mechanism-step-title-2" class="mechanism-panel" data-reading-paint="thread" id="mechanism-panel-2">
+<h3 class="mechanism-step-name" data-type-role="heading" id="mechanism-step-title-2"><span class="mechanism-step-number">03</span><span>用假画面调用真关系</span></h3>
+<h4 class="mechanism-step-summary" data-type-role="reasoning" id="mechanism-step-heading-2">视频通话之所以奏效，<br/>是因为受害者信任这张脸的身份。</h4>
+<p class="mechanism-step-body" data-type-role="case">熟悉的职务与面孔让会议显得可信。画面关闭后，员工仍收到即时通信软件发来的付款指令。</p>
+<p class="mechanism-step-note" data-type-role="reasoning">技术提供了可见的身份，组织关系则让指令有了分量。</p>
+</article>
+<article aria-labelledby="mechanism-step-title-3" class="mechanism-panel" id="mechanism-panel-3">
+<h3 class="mechanism-step-name" data-type-role="heading" id="mechanism-step-title-3"><span class="mechanism-step-number">04</span><span>用真关系捏造假指令</span></h3>
+<h4 class="mechanism-step-summary" data-type-role="reasoning" id="mechanism-step-heading-3">固有的信任关系，<br/>成为诈骗犯要求转账的筹码。</h4>
+<p class="mechanism-step-body" data-type-role="case">员工随后授权向 5 个本地银行账户转款，损失约 2 亿港元。画面所确认的身份，越过了交易与账户核验。</p>
+</article>
+</div>
+<span aria-live="polite" class="mechanism-live-status" id="mechanism-live-status" role="status">当前步骤：素材</span>
+</div>
+</section>
+</div>
+<div class="chapter-shell" id="pressure">
+<section aria-labelledby="pressure-chapter-title" class="pressure-page reading-chapter"><header class="chapter-lead reading-width" data-reading-paint="city"><h2 class="page-chapter-title pressure-chapter-title" data-type-role="heading" id="pressure-chapter-title"><span>PART 03</span><span>付款如何被推进</span></h2><h3 class="pressure-question" data-type-role="question">我会拒绝“领导”的要求吗？</h3><p class="pressure-thesis" data-type-role="reasoning">“现在就要。”<br/><strong>因为现实身份，他不敢犹豫，不曾怀疑。</strong></p><p class="pressure-deck" data-type-role="reasoning">催促，让人来不及确认；<br/>保密，限制向他人求证；<br/>假凭证、假文件，让付款理由看似可信。</p></header><div class="pressure-exploration reading-width"><div class="pressure-overview" id="pressure-overview">
+<p class="pressure-filter-hint" id="pressure-filter-hint">点击类别，查看对应的浅金档案</p>
+<div aria-describedby="pressure-filter-hint" aria-label="选择查看的付款推动方式" class="pressure-filters" role="group">
+<button aria-pressed="true" class="pressure-filter" data-pressure-filter="urgent" type="button"><span class="pressure-filter-label"><svg aria-hidden="true"><use href="#pressure-speech-symbol"></use></svg>紧急 / 保密话术</span><span class="pressure-filter-ratio"><strong id="pressure-urgent-count">13</strong><span>/ <span data-pressure-total="">24</span></span></span></button>
+<button aria-pressed="false" class="pressure-filter" data-pressure-filter="document" type="button"><span class="pressure-filter-label"><svg aria-hidden="true"><use href="#pressure-document-symbol"></use></svg>伪造凭证 / 文件</span><span class="pressure-filter-ratio"><strong id="pressure-document-count">8</strong><span>/ <span data-pressure-total="">24</span></span></span></button>
+</div>
+<footer class="pressure-footnote" data-type-role="note" id="pressure-sample-note"><p>* 24 张档案均已纳入样本；浅金突出当前类别，蓝灰显示其他案例。同一案件可属于两类。</p><a download="" href="cases.csv">24 起案例与来源 ↓</a></footer></div><div class="pressure-board-group"><div aria-describedby="pressure-sample-note" class="pressure-board-heading"><p><strong data-pressure-total="">24</strong> 起案例样本<sup aria-label="样本说明" class="source-mark">*</sup></p><p id="pressure-board-selection">浅金突出：紧急 / 保密话术</p></div><div class="painted-frame archive-frame" data-canvas-height="504" data-canvas-width="1024"><div aria-label="24 起案例档案，悬停或点击查看案情与来源" class="pressure-case-board" data-filter="urgent" id="pressure-case-board" role="group"></div></div><p class="pressure-board-hint">每张档案代表 1 起样本 · 鼠标停留查看案情与来源</p><p class="pressure-board-error" hidden="" id="pressure-board-error">案例数据暂未加载，请刷新页面后重试。</p></div></div>
+<p aria-live="polite" class="pressure-live-status" id="pressure-live-status" role="status"></p>
+</section>
+</div>
+<div class="chapter-shell" id="defenses">
+<section aria-labelledby="defenses-chapter-title" class="defenses-page reading-chapter"><header class="chapter-lead reading-width" data-reading-paint="thread"><h2 class="page-chapter-title defenses-chapter-title" data-type-role="heading" id="defenses-chapter-title"><span>PART 04</span><span>我们如何重新交付信任</span></h2><p class="defenses-intro" data-type-role="reasoning">付款前保持疑问，核实本人、业务和账户，<br/>出现异常后，由银行与警方接续处置。</p></header><div class="defenses-reader reading-width"><div class="defenses-sticky"><p class="defenses-node-hint" id="defenses-node-hint">向下阅读，或点击节点跳转 ↓</p><div aria-describedby="defenses-node-hint" aria-label="转账前核验与转账后处置" class="defenses-path" role="group">
+<svg aria-hidden="true" class="defenses-route" viewBox="0 0 1920 290"><path d="M241 100C359 74 470 147 588 117S821 73 935 100S1195 146 1355 117S1570 65 1679 100"></path><circle cx="241" cy="100" id="defenses-route-marker" r="7"></circle></svg>
+<span aria-hidden="true" class="defenses-transfer-boundary">付款发生</span>
+<button aria-controls="defenses-panel-0" aria-pressed="true" class="defenses-node" data-defense-step="0" id="defenses-node-0" type="button"><span aria-hidden="true" class="defenses-art defenses-art-contact"></span><span class="defenses-node-name">核实本人</span><span class="defenses-node-copy">拨打原先保存的号码</span><span aria-hidden="true" class="defenses-node-current">正在查看</span></button>
+<button aria-controls="defenses-panel-1" aria-pressed="false" class="defenses-node" data-defense-step="1" id="defenses-node-1" type="button"><span aria-hidden="true" class="defenses-art defenses-art-business"></span><span class="defenses-node-name">求证事由</span><span class="defenses-node-copy">向第三方核实借款理由</span><span aria-hidden="true" class="defenses-node-current">正在查看</span></button>
+<button aria-controls="defenses-panel-2" aria-pressed="false" class="defenses-node" data-defense-step="2" id="defenses-node-2" type="button"><span aria-hidden="true" class="defenses-art defenses-art-account"></span><span class="defenses-node-name">核对账户</span><span class="defenses-node-copy">核对到账与实际收款人</span><span aria-hidden="true" class="defenses-node-current">正在查看</span></button>
+<button aria-controls="defenses-panel-3" aria-pressed="false" class="defenses-node defenses-node-after" data-defense-step="3" id="defenses-node-3" type="button"><span aria-hidden="true" class="defenses-art defenses-art-report"></span><span class="defenses-node-name">寻求警方帮助</span><span class="defenses-node-copy">发现异常，及时求助</span><span aria-hidden="true" class="defenses-node-current">正在查看</span></button>
+<button aria-controls="defenses-panel-4" aria-pressed="false" class="defenses-node defenses-node-after" data-defense-step="4" id="defenses-node-4" type="button"><span aria-hidden="true" class="defenses-art defenses-art-trace"></span><span class="defenses-node-name">持续追踪</span><span class="defenses-node-copy">警方继续追查资金流向</span><span aria-hidden="true" class="defenses-node-current">正在查看</span></button>
+</div></div><div class="defenses-panels" id="defenses-detail"><article aria-labelledby="defenses-action-title-0" class="defenses-panel" data-phase="before" id="defenses-panel-0"><p class="defenses-detail-label">转账前 · 建议的核验动作</p><h3 data-type-role="heading" id="defenses-action-title-0">从原来的号码，重新找到本人。</h3><p class="defenses-action-copy" data-type-role="reasoning">结束当前通话，通过原先保存的联系方式确认。新的号码或对方临时给出的“联系人”，仍可能属于同一套说法。</p><details class="defenses-evidence-disclosure"><summary>案例与依据 · 商河：真表哥没有借钱</summary><p class="defenses-detail-label" data-type-role="case">案例依据 · 核验发生在转账以后</p><p data-type-role="case">冯某后来拨通真正表哥的电话，才发现对方没有用钱。这个案例提示，独立联系提供了视频之外的信息；它应该在付款前发生。</p><a data-type-role="note" href="https://news.cctv.com/2023/07/15/ARTIf7KVF1D0H3OUJBcmSEVv230715.shtml" rel="noopener noreferrer" target="_blank">央视报道 ↗</a></details></article><article aria-labelledby="defenses-action-title-1" class="defenses-panel" data-phase="before" data-reading-paint="horizon" id="defenses-panel-1"><p class="defenses-detail-label">转账前 · 向第三方求证</p><h3 data-type-role="heading" id="defenses-action-title-1">向第三方求证借款事由是否属实</h3><p class="defenses-action-copy" data-type-role="reasoning">通过原先保存的联系方式，向相关亲友、同事或部门核对借款事由、授权与付款安排。紧急或保密的要求，不应让经办人失去暂停和求证的余地。</p><details class="defenses-evidence-disclosure"><summary>案例与依据 · 贵阳：60 万元没有转出</summary><p class="defenses-detail-label" data-type-role="case">已发生的介入 · 银行人员提出疑问</p><p data-type-role="case">银行人员发现汇款凭证异常，建议副总经理联系董事长秘书。视频之外的工作关系帮助核实了骗局。</p><a data-type-role="note" href="https://news.cqnews.net/1/detail/1176474506480787456/app/content_1176474506480787456.html" rel="noopener noreferrer" target="_blank">中国新闻周刊报道 ↗</a></details></article><article aria-labelledby="defenses-action-title-2" class="defenses-panel" data-phase="before" id="defenses-panel-2"><p class="defenses-detail-label">转账前 · 交易核验建议</p><h3 data-type-role="heading" id="defenses-action-title-2">熟悉的发起人，不等于真正的收款人。</h3><p class="defenses-action-copy" data-type-role="reasoning">把付款用途、实际到账和收款账户分别核对。对方发来的转款截图，不能替代自己账户中的真实交易记录。</p><details class="defenses-evidence-disclosure"><summary>案例与依据 · 福州：等到的是截图，不是到账</summary><p class="defenses-detail-label" data-type-role="case">案例依据 · 伪凭证推动垫付</p><p data-type-role="case">“好友”以保证金为由借用公司账户，并发来汇款截图。郭先生没有等到实际到账，就分两笔转出 430 万元。</p><a data-type-role="note" href="https://news.cqnews.net/1/detail/1176474506480787456/app/content_1176474506480787456.html" rel="noopener noreferrer" target="_blank">中国新闻周刊报道 ↗</a></details></article><article aria-labelledby="defenses-action-title-3" class="defenses-panel" data-phase="after" data-reading-paint="city" id="defenses-panel-3"><p class="defenses-detail-label">转账后 · 处置建议</p><h3 data-type-role="heading" id="defenses-action-title-3">发现异常，及时寻求警方帮助</h3><p class="defenses-action-copy" data-type-role="reasoning">发现被骗后，立即联系银行并报案，提供交易记录、收款账户和联系信息。能否止付或追回，取决于资金流转及实际处置。</p><details class="defenses-evidence-disclosure"><summary>案例与依据 · 银行与警方需要尽快接到信息</summary><p class="defenses-detail-label" data-type-role="case">官方处置建议</p><p data-type-role="case">新加坡警方在深伪企业诈骗通报中建议，对紧急付款通过既有渠道确认；发现被骗，立即联系银行拦截交易并报案。</p><a data-type-role="note" href="https://www.police.gov.sg/media-hub/news/2025/04/20250407_singapore_and_hong_kong_police_force_recover_over_%24670000_in_a_scam" rel="noopener noreferrer" target="_blank">新加坡警方通报 ↗</a></details></article><article aria-labelledby="defenses-action-title-4" class="defenses-panel" data-phase="after" id="defenses-panel-4"><p class="defenses-detail-label">转账后 · 已发生的警银行动</p><h3 data-type-role="heading" id="defenses-action-title-4">警方将持续追踪资金流向</h3><p class="defenses-action-copy" data-type-role="reasoning">个人已经很难独自追踪后续账户。银行、警方以及跨地区协作，承担继续查找、止付与扣押的任务。</p><details class="defenses-evidence-disclosure"><summary>案例与依据 · 新加坡与香港接续追查</summary><p class="defenses-detail-label" data-type-role="case">已发生的处置 · 2025 年 3 月</p><p data-type-role="case">财务主管转出超过 49.9 万美元后通知银行。新加坡与香港警方追踪后续资金，并拦截或扣押相关款项。</p><a data-type-role="note" href="https://www.police.gov.sg/media-hub/news/2025/04/20250407_singapore_and_hong_kong_police_force_recover_over_%24670000_in_a_scam" rel="noopener noreferrer" target="_blank">新加坡警方通报 ↗</a></details></article></div></div>
+<p aria-live="polite" class="defenses-live-status" id="defenses-live-status" role="status">当前查看：核实本人</p>
+<div class="defenses-intercept" data-reading-paint="horizon">
+<p class="defenses-intercept-title"><span>福州案 · <b data-defense-sent="">430</b> 万元转出后的处置</span><strong><b data-defense-stopped="">336.84</b> 万元被及时拦截</strong></p>
+<div class="defenses-intercept-viz"><div aria-label="福州案转出430万元，其中336.84万元被及时拦截，93.16万元被转移。" class="defenses-money-chart" role="img"><svg aria-hidden="true" viewBox="0 0 260 260"><circle class="money-ring-track" cx="130" cy="130" r="96"></circle><g transform="rotate(-90 130 130)"><circle class="money-ring money-ring-kept" cx="130" cy="130" pathLength="100" r="96"></circle><circle class="money-ring money-ring-away" cx="130" cy="130" pathLength="100" r="96"></circle></g><text class="money-ring-label" x="130" y="112">已转出</text><text class="money-ring-total" x="130" y="151"><tspan data-defense-sent="">430</tspan><tspan class="money-ring-unit"> 万元</tspan></text></svg></div><div aria-label="查看福州案金额说明" class="defenses-money-legend" role="group"><button aria-controls="defenses-money-caption" aria-pressed="false" class="defenses-money-kept" data-defense-money="kept" type="button"><span aria-hidden="true" class="money-key"></span><span>及时拦截<strong><span data-defense-stopped="">336.84</span><small> 万元</small></strong></span></button><button aria-controls="defenses-money-caption" aria-pressed="false" class="defenses-money-away" data-defense-money="away" type="button"><span aria-hidden="true" class="money-key"></span><span>被转移<strong><span data-defense-away="">93.16</span><small> 万元</small></strong></span></button></div></div>
+<footer class="defenses-footnote" data-type-role="note"><p id="defenses-money-caption" role="status">* 这组金额是一次具体处置，不是一般追回率；“拦截”不等于已经返还受害人。</p><a href="https://news.cnr.cn/native/gd/20230522/t20230522_526260095.shtml" rel="noopener noreferrer" target="_blank">福州案来源 · 央广网 ↗</a></footer></div></section>
+</div>
+<div class="chapter-shell" id="ending">
+<section aria-labelledby="ending-chapter-title" class="ending-page reading-chapter"><header class="chapter-lead reading-width"><h2 class="page-chapter-title ending-chapter-title" data-type-role="heading" id="ending-chapter-title">尾声</h2></header><div class="ending-scene reading-width"><div class="ending-copy" data-reading-paint="horizon" data-type-role="reasoning">
+<p>人们对亲友、同事的<strong class="ending-emphasis">天然信赖</strong>，构筑了稳定可靠的社会关系。若防骗只能依靠对熟悉的脸保持戒备，那么远程联系技术的发展，反而会加重信任的负担。</p>
+<p><strong class="ending-emphasis">技术与制度</strong>需要共同创造的，是让一笔异常付款仍有<strong class="ending-emphasis">被核实、被拦下</strong>的机会，<span class="ending-closing-sentence">让人们可以<strong class="ending-emphasis ending-emphasis-mint">继续信任彼此</strong>，而不必独自承担这份信任被冒用的全部风险。</span></p>
+</div><div class="ending-art-frame" data-canvas-height="900" data-canvas-width="900"><figure class="ending-portrait"><img alt="手绘通话画面中的完整面孔短暂停留，右半边散开成代码，最终留下半张熟悉的笑脸。" height="1254" loading="lazy" src="ending-handdrawn-reference.webp" width="1254"/><div aria-hidden="true" class="ending-fragments"></div></figure></div></div><div class="ending-trust-finale reading-width" data-reading-paint="thread" id="trust-finale"><p class="ending-final-sentence" data-type-role="closing"><span class="ending-final-line">AI时代，可能充满虚假</span><span class="ending-final-line">人与人之间的信任应该被我们的社会托住</span></p><div aria-hidden="true" class="ending-river-wrap">
+<svg class="ending-light-river" preserveAspectRatio="none" viewBox="0 255 2048 460">
+<defs>
+<image height="883" href="painted-gold-thread.webp" id="river-original-ink" width="2048" x="0" y="0"/>
+<filter color-interpolation-filters="sRGB" height="100%" id="river-painted-gold" width="100%" x="0" y="0">
+<feColorMatrix type="matrix" values=".35 0 0 0 .66  0 .40 0 0 .54  0 0 .42 0 .30  5.4 0 -5.4 0 -.025"></feColorMatrix>
+</filter>
+<filter color-interpolation-filters="sRGB" height="100%" id="river-painted-hot" width="100%" x="0" y="0">
+<feColorMatrix type="matrix" values="0 0 0 0 1  0 0 0 0 .91  0 0 0 0 .69  7.2 0 -7.2 0 -.04"></feColorMatrix>
+</filter>
+<filter color-interpolation-filters="sRGB" height="120%" id="river-warm-halo" width="110%" x="-5%" y="-10%">
+<feGaussianBlur stdDeviation="7"></feGaussianBlur><feComponentTransfer><feFuncA slope="2.4" type="linear"></feFuncA></feComponentTransfer>
+</filter>
+<linearGradient id="river-light-band" x1="0" x2="1" y1="0" y2="0">
+<stop offset="0" stop-color="black"></stop><stop offset=".22" stop-color="#555"></stop><stop offset=".50" stop-color="white"></stop><stop offset=".68" stop-color="white"></stop><stop offset="1" stop-color="black"></stop>
+</linearGradient>
+<mask height="883" id="river-flow-left" maskUnits="userSpaceOnUse" style="mask-type:luminance" width="2048" x="0" y="0"><g class="river-sweep river-sweep--left"><rect fill="url(#river-light-band)" height="883" width="460" x="-1190" y="0"></rect><rect fill="url(#river-light-band)" height="883" width="460" x="-420" y="0"></rect><rect fill="url(#river-light-band)" height="883" width="460" x="350" y="0"></rect><rect fill="url(#river-light-band)" height="883" width="460" x="1120" y="0"></rect><rect fill="url(#river-light-band)" height="883" width="460" x="1890" y="0"></rect></g></mask>
+<mask height="883" id="river-flow-right" maskUnits="userSpaceOnUse" style="mask-type:luminance" width="2048" x="0" y="0"><g class="river-sweep river-sweep--right"><rect fill="url(#river-light-band)" height="883" width="460" x="-1190" y="0"></rect><rect fill="url(#river-light-band)" height="883" width="460" x="-420" y="0"></rect><rect fill="url(#river-light-band)" height="883" width="460" x="350" y="0"></rect><rect fill="url(#river-light-band)" height="883" width="460" x="1120" y="0"></rect><rect fill="url(#river-light-band)" height="883" width="460" x="1890" y="0"></rect></g></mask></defs>
+<g class="river-stream river-stream--left">
+<g class="river-painted-aura" filter="url(#river-warm-halo)"><use filter="url(#river-painted-gold)" href="#river-original-ink"></use></g>
+<g class="river-painted-bed"><use filter="url(#river-painted-gold)" href="#river-original-ink"></use></g>
+<g class="river-painted-light" mask="url(#river-flow-left)">
+<g class="river-current-halo" filter="url(#river-warm-halo)"><use filter="url(#river-painted-hot)" href="#river-original-ink"></use></g>
+<use filter="url(#river-painted-hot)" href="#river-original-ink"></use>
+</g>
+</g>
+<g class="river-stream river-stream--right" transform="translate(2048 25) scale(-1 .88)">
+<g class="river-painted-aura" filter="url(#river-warm-halo)"><use filter="url(#river-painted-gold)" href="#river-original-ink"></use></g>
+<g class="river-painted-bed"><use filter="url(#river-painted-gold)" href="#river-original-ink"></use></g>
+<g class="river-painted-light" mask="url(#river-flow-right)">
+<g class="river-current-halo" filter="url(#river-warm-halo)"><use filter="url(#river-painted-hot)" href="#river-original-ink"></use></g>
+<use filter="url(#river-painted-hot)" href="#river-original-ink"></use>
+</g>
+</g>
+</svg></div></div>
+<button aria-controls="call-dialog" aria-haspopup="dialog" class="ending-replay" id="replay-call" type="button"><svg aria-hidden="true"><use href="#call-phone"></use></svg><span>带着新的判断，再接一次来电</span><span aria-hidden="true">↗</span></button><footer class="ending-footer"><a href="#top">回到封面 ↑</a></footer></section>
+</div>
+<svg aria-hidden="true" class="pressure-symbols"><defs>
+<symbol id="pressure-speech-symbol" viewBox="0 0 48 48"><path d="M9 8h30a5 5 0 0 1 5 5v19a5 5 0 0 1-5 5H22L10 45v-8H9a5 5 0 0 1-5-5V13a5 5 0 0 1 5-5Z"></path><path d="M13 23h2m8 0h2m8 0h2"></path></symbol>
+<symbol id="pressure-document-symbol" viewBox="0 0 48 48"><path d="M9 4h22l9 9v29H9ZM31 4v10h9M17 21h15M17 28h15M17 35h9"></path></symbol>
+</defs></svg>
+<dialog aria-labelledby="voices-dialog-heading" id="voices-source-dialog">
+<div class="voices-dialog-header"><h2 id="voices-dialog-heading"></h2><button aria-label="关闭平台原题" id="voices-close-dialog" type="button">×</button></div>
+<div class="voices-dialog-content" id="voices-dialog-content"></div>
+</dialog>
+<!-- Reuse the original call scene outside the scaled 16:9 canvases. -->
+<svg aria-hidden="true" class="call-symbols"><defs>
+<symbol id="call-phone" viewBox="0 0 24 24"><path d="m6 3-3 2c-1 7 9 17 16 16l2-3-5-4-2 3c-3-1-6-4-7-7l3-2z"></path></symbol>
+<symbol id="call-video" viewBox="0 0 24 24"><rect height="12" rx="2" width="12" x="3" y="6"></rect><path d="m15 10 6-3v10l-6-3z"></path></symbol>
+<symbol id="call-close" viewBox="0 0 24 24"><path d="m6 6 12 12M6 18 18 6"></path></symbol>
+<symbol id="call-volume" viewBox="0 0 24 24"><path d="M4 9h4l5-5v16l-5-5H4zM17 8q5 4 0 8"></path></symbol>
+</defs></svg>
+<dialog aria-labelledby="call-name" id="call-dialog">
+<div class="call-shell">
+<img alt="虚构角色阿杰的合成人像" class="call-face" src="ajie-clean.webp"/>
+<div class="call-shade"></div>
+<div class="call-top">
+<button aria-label="退出模拟通话" autofocus="" id="close-call" type="button"><svg aria-hidden="true"><use href="#call-close"></use></svg></button>
+<div><h2 id="call-name">阿杰</h2><span id="call-clock">正在接通</span></div><span>模拟通话</span>
+</div>
+<div aria-live="polite" id="call-subtitle"></div>
+<div hidden="" id="call-options">
+<button data-choice="trust" type="button">“好，我先帮你垫上。”</button>
+<button data-choice="question" type="button">“出了什么事，你说清楚。”</button>
+<button data-choice="callback" type="button">“等一下，我打你原来的号码。”</button>
+</div>
+<div class="call-controls">
+<button aria-label="开启设备朗读" aria-pressed="false" id="toggle-voice" type="button"><svg aria-hidden="true"><use href="#call-volume"></use></svg><span>朗读关</span></button>
+<button aria-label="挂断通话" id="hang-call" type="button"><svg aria-hidden="true"><use href="#call-phone"></use></svg><span>挂断</span></button>
+<button aria-label="重新播放对话" id="repeat-speech" type="button"><svg aria-hidden="true"><use href="#call-video"></use></svg><span>重听</span></button>
+</div>
+<p hidden="" id="call-status" role="status"></p>
+<div class="call-response" hidden="" id="call-response">
+<span id="response-state">模拟通话 · 已结束</span><h3 id="response-title"></h3><p id="response-copy"></p>
+<p hidden="" id="response-warning"></p>
+<button class="action-button" id="enter-story" type="button">继续阅读 <span>↓</span></button>
+<button class="text-action" id="try-again" type="button">再接一次 ↗</button>
+</div>
+</div>
+</dialog>
+<script>
+    const frames = document.querySelectorAll('#top.landscape-frame');
+    const fitPages = () => frames.forEach(frame => {
+      frame.style.setProperty('--page-scale', frame.getBoundingClientRect().width / 1920);
+    });
+    fitPages();
+    const pageObserver = new ResizeObserver(fitPages);
+    frames.forEach(frame => pageObserver.observe(frame));
+  </script>
+<dialog aria-labelledby="relationship-case-title" class="reading-case-dialog relationship-detail" id="relationship-detail">
+<button id="relation-detail-close" type="button">← 关闭案例，返回关系图</button>
+<div class="relationship-detail-scroll">
+<p class="rel-kicker" id="relationship-case-group"></p>
+<h3 data-type-role="case" id="relationship-case-title" tabindex="-1"></h3>
+<p class="relationship-case-person" data-type-role="case" id="relationship-case-person"></p>
+<dl>
+<dt>付款理由</dt><dd data-type-role="case" id="relationship-case-reason"></dd>
+<dt>实际转出</dt><dd class="relationship-case-money" id="relationship-case-money"></dd>
+<dt>公开材料记载的结果</dt><dd data-type-role="case" id="relationship-case-outcome"></dd>
+</dl>
+<p class="relationship-case-coding" data-type-role="note" id="relationship-case-coding"></p>
+<div data-type-role="note" id="relationship-case-sources"></div>
+</div>
+</dialog><aside aria-labelledby="pressure-detail-title" class="pressure-detail pressure-hover-detail" hidden="" id="pressure-detail" role="region" tabindex="-1">
+<button id="pressure-detail-close" type="button">关闭案例 ×</button>
+<div class="pressure-detail-scroll">
+<p class="pressure-detail-kicker" id="pressure-detail-kicker"></p>
+<h3 data-type-role="case" id="pressure-detail-title" tabindex="-1"></h3>
+<p data-type-role="case" id="pressure-detail-person"></p>
+<div class="pressure-detail-tags" id="pressure-detail-tags"></div>
+<h4>话术与付款理由</h4><p data-type-role="case" id="pressure-detail-reason"></p>
+<h4>公开材料记载的结果</h4><p data-type-role="case" id="pressure-detail-outcome"></p>
+<div data-type-role="note" id="pressure-detail-sources"></div>
+<p class="pressure-detail-method" data-type-role="note">上方只列出本案已归入的手段类别，不表示其他手段一定没有发生。无论显示何种颜色，每张档案都已计入 24 起案例样本。</p>
+</div>
+</aside></body>
+</html>

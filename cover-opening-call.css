@@ -1,0 +1,54 @@
+/* Original Ajie call scene; its native modal backdrop covers the whole webpage. */
+.call-symbols{position:absolute;width:0;height:0;overflow:hidden}
+#start-call:focus-visible,#call-dialog button:focus-visible{outline:2px solid var(--gold);outline-offset:5px}
+#call-dialog{
+  --paper:#f3ede0;--text:#d5d9cc;--muted:#acb8aa;--gold:#d7bd8d;
+  --ease:cubic-bezier(.16,1,.3,1);
+  position:fixed;inset:0;margin:auto;padding:0;border:0;
+  width:min(450px,calc(100vw - 24px));height:min(840px,96svh);
+  max-height:100svh;max-width:none;overflow:hidden;border-radius:8px;
+  background:#202b25;color:var(--paper);font:18px/1.8 var(--serif);
+}
+#call-dialog::backdrop{background:#07110fed}
+#call-dialog [hidden]{display:none!important}
+#call-dialog h2,#call-dialog h3,#call-dialog p{margin:0}
+#call-dialog button{border:0;color:inherit;font-family:var(--serif)}
+#call-dialog button:focus:not(:focus-visible){outline:0}
+#call-dialog svg{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.call-shell{height:100%;position:relative}
+.call-face{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 35%}
+.call-shade{position:absolute;inset:0;background:linear-gradient(#0008,transparent 25%,transparent 42%,#000c 82%,#000d)}
+.call-top{position:absolute;top:25px;left:22px;right:22px;display:grid;grid-template-columns:65px 1fr 65px;align-items:start;gap:12px;z-index:2}
+.call-top>button{width:38px;height:38px;display:grid;place-items:center;border-radius:50%;background:#0005}
+.call-top>div{text-align:center}
+#call-dialog .call-top h2{font:25px var(--serif);margin-bottom:7px}
+.call-top>div>span{font-size:13px}
+.call-top>span{font-size:11px;padding-top:7px;text-align:right;color:#e2e7df}
+#call-subtitle{position:absolute;bottom:31%;left:25px;right:25px;text-align:center;font-size:22px;line-height:1.8;text-shadow:0 2px 10px #000;transition:bottom .2s var(--ease),font-size .2s var(--ease)}
+.call-shell.has-options #call-subtitle{bottom:max(44%,318px);font-size:20px}
+#call-options{position:absolute;bottom:128px;left:22px;right:22px;display:grid;gap:10px;animation:callOptionsIn .2s var(--ease)}
+#call-options button{background:#14241fef;color:white;border:1px solid #b1c1b57a;text-align:left;padding:12px 16px;font-size:16px;line-height:1.5;min-height:48px;border-radius:5px}
+#call-options button:hover{background:#41644b}
+.call-controls{position:absolute;bottom:32px;left:20px;right:20px;display:flex;justify-content:space-evenly}
+.call-controls>button{height:47px;width:47px;background:#ffffff26;border-radius:50%;display:grid;place-items:center;position:relative}
+.call-controls>button>span{position:absolute;top:52px;white-space:nowrap;font-size:11px}
+.call-controls #hang-call{background:#c8584a}
+.call-controls #hang-call svg{transform:rotate(135deg)}
+.call-response{position:absolute;inset:0;padding:45px 34px;display:flex;flex-direction:column;justify-content:safe center;background:#10231eed;z-index:4;overflow-y:auto}
+.call-response>*{flex-shrink:0}
+.call-response>span{color:var(--muted);font-size:14px}
+#call-dialog .call-response[data-outcome="loss"]>span,#call-dialog .call-response[data-outcome="loss"] h3{color:#ed967c}
+#call-dialog .call-response[data-outcome="safe"]>span,#call-dialog .call-response[data-outcome="safe"] h3{color:#afcbb6}
+#call-dialog .call-response h3{font:34px/1.4 var(--serif);margin:25px 0;text-wrap:balance}
+#call-dialog .call-response p{font-size:18px;color:var(--text);line-height:1.9;margin-bottom:30px}
+#call-dialog .call-response #response-warning{font-size:18px;color:var(--gold);line-height:1.65;margin-top:-8px}
+#call-dialog .call-response .action-button{display:inline-flex;align-items:center;justify-content:space-between;gap:15px;padding:18px 24px;font-size:18px;font-weight:600;background:#ed967c;color:#202b25;box-shadow:none;letter-spacing:normal}
+#call-dialog .call-response .action-button:hover{background:#eda88c}
+#call-dialog .call-response .text-action{align-self:center;margin-top:15px;padding:12px 0;border-bottom:1px solid #657263;background:none;color:#afcbb6;font-size:16px}
+#call-status{position:absolute;top:105px;left:22px;right:22px;z-index:3;padding:10px 14px;background:#10231eed;color:var(--paper);font-size:14px}
+@keyframes callOptionsIn{from{opacity:.5}to{opacity:1}}
+@media(max-height:660px){
+  #call-dialog{overflow-y:auto}
+  .call-shell{min-height:620px}
+}
+@media(prefers-reduced-motion:reduce){#call-subtitle{transition:none}#call-options{animation:none}}
